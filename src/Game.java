@@ -13,6 +13,7 @@ public class Game {
 
     double speed, direction;
     int score;
+    Boolean gameOver;
 
     public Game(){
 
@@ -27,17 +28,20 @@ public class Game {
         direction = 90;
         score = 0;
 
+        gameOver = false;
+
         scoreText = new Text(250, 50, "Punkte " + score);
 
-        while(true) {
-            ball.setDirection(direction);
+        while(!gameOver) {
+
             ball.move(speed);
             window.wait(1);
 
             if (ball.intersects(player2)) {
                 speed = -speed;
-                ball.move(-1);
-                direction = direction + 270 + Tools.randomNumber(-5,5);
+                ball.move(speed);
+                direction = 90;
+                direction = direction + Tools.randomNumber(-10, 10);
                 ball.setDirection(direction);
                 score = score + 1;
                 scoreText.setText("Punkte " + score);
@@ -45,8 +49,9 @@ public class Game {
 
             if (ball.intersects(player1)) {
                 speed = -speed;
-                ball.move(1);
-                direction = direction + 270 + Tools.randomNumber(-5,5);
+                ball.move(speed);
+                direction = 90;
+                direction = direction + Tools.randomNumber(-10, 10);
                 ball.setDirection(direction);
                 score = score + 1;
                 scoreText.setText("Punkte " + score);
@@ -70,15 +75,9 @@ public class Game {
 
             if (ball.getCenterX() > 700 || ball.getCenterY() > 500) {
                 new Text(20,20, "Game Over");
+                gameOver = true;
             }
         }
 
-    }
-
-    public static int randomDirection() {
-        int angle;
-
-        angle = 1;
-        return angle;
     }
 }
