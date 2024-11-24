@@ -79,7 +79,7 @@ public class Game {
                 player1.move(0, 1);
             }
 
-            if (ball.getCenterX() > 700 || ball.getCenterY() > 500) {
+            if (ball.getCenterX() > 700 || ball.getCenterY() > 500 || ball.getCenterX() < 0 || ball.getCenterY() < 0) {
                 new Text(20,20, "Game Over");
                 gameOver = true;
             }
