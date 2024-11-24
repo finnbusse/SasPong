@@ -33,7 +33,6 @@ public class Game {
         scoreText = new Text(250, 50, "Punkte " + score);
 
         startGame();
-
     }
 
     public void startGame(){
