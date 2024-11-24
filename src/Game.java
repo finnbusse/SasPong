@@ -15,7 +15,7 @@ public class Game {
     int score;
     Boolean gameOver;
 
-    public Game(){
+    public Game() {
 
         window = new View(700, 500, "Pong");
 
@@ -31,6 +31,12 @@ public class Game {
         gameOver = false;
 
         scoreText = new Text(250, 50, "Punkte " + score);
+
+        startGame();
+
+    }
+
+    public void startGame(){
 
         while(!gameOver) {
 
