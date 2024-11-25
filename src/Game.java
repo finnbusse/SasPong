@@ -13,16 +13,16 @@ public class Game {
 
     double speed, direction;
     int score;
-    Boolean gameOver;
+    boolean gameOver;
 
     public Game() {
 
-        window = new View(700, 500, "Pong");
+        window = new View(1000, 700, "Pong");
 
-        player1 = new Rectangle(50, 150, 20, 200);
-        player2 = new Rectangle(630, 150, 20, 200);
+        player1 = new Rectangle(50, 250, 20, 200);
+        player2 = new Rectangle(930, 250, 20, 200);
 
-        ball = new Circle(340, 240, 10);
+        ball = new Circle(490, 340, 10);
 
         speed = 1;
         direction = 90;
@@ -78,7 +78,7 @@ public class Game {
                 player1.move(0, 1);
             }
 
-            if (ball.getCenterX() > 700 || ball.getCenterY() > 500 || ball.getCenterX() < 0 || ball.getCenterY() < 0) {
+            if (ball.getCenterX() > 1000 || ball.getCenterY() > 700 || ball.getCenterX() < 0 || ball.getCenterY() < 0) {
                 new Text(20,20, "Game Over");
                 gameOver = true;
             }
